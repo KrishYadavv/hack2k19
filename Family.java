@@ -11,17 +11,7 @@ public class Family {
 	private String address;
 	private int familyID;
 	private static int counter=1;
-    private static int day=0;
-    private static Records RecObj=new Records();
-    private ArrayList<Resident> res=new ArrayList<Resident>();
-    private String password;
-    private Bill b=new Bill();
-    Complaint com=new Complaint("");
 
-    private Connection connect = null;
-	private Statement statement = null;
-	private PreparedStatement preparedStatement = null;
-	private ResultSet resultSet = null;
 
     public Family(String a, String n, String em, String p, long phn){
     	address=a;
@@ -34,7 +24,46 @@ public class Family {
 
     	try (
 			Class.forName("com.mysql.jdbc.Driver");
+			connec
+
+    public String getAddress() {
+    	try (
+			Class.forName("com.mysql.jdbc.Driver");
 			connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbms_project?useSSL=false","diya","Password123#@!");
+			statement = connect.createStatement();
+			) {
+    		resultSet = statement.executeQuery("select address from Family where familyID = %d", counter);
+
+    		String add = null;
+    		if(resultSet.next()){
+    			add = resultSet.getString(1);
+    		}
+
+    public String getAddress() {
+    	try (
+			Class.forName("com.mysql.jdbc.Driver");
+			connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbms_project?useSSL=false","diya","Password123#@!");
+			statement = connect.createStatement();
+			) {
+    		resultSet = statement.executeQuery("select address from Family where familyID = %d", counter);
+
+    		String add = null;
+    		if(resultSet.next()){
+    			add = resultSet.getString(1);
+    		}
+
+    public String getAddress() {
+    	try (
+			Class.forName("com.mysql.jdbc.Driver");
+			connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbms_project?useSSL=false","diya","Password123#@!");
+			statement = connect.createStatement();
+			) {
+    		resultSet = statement.executeQuery("select address from Family where familyID = %d", counter);
+
+    		String add = null;
+    		if(resultSet.next()){
+    			add = resultSet.getString(1);
+    		}t = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbms_project?useSSL=false","diya","Password123#@!");
 			statement = connect.createStatement();
 			) {
     		resultSet = statement.executeQuery("insert into Family values (%d, %s, %s)", familyID, address, password);
@@ -52,10 +81,12 @@ public class Family {
 			) {
     		int countUpdated = statement.executeUpdate("update Family set address = %s where familyID = %d", address, counter);
     		//resultSet = statement.executeQuery("update Family set address = %s where familyID = %d", address, counter);
-    	} catch(SQLException ex) {
-    		ex.printStackTrack();
-    }
-}
+    	} catch(SQLException ex) {    private static int day=0;
+    private static Records RecObj=new Records();
+    private ArrayList<Resident> res=new ArrayList<Resident>();
+    private String password;
+    private Bill b=new Bill();
+    Complaint com=new Complaint("");
 
     public String getAddress() {
     	try (
@@ -69,9 +100,37 @@ public class Family {
     		if(resultSet.next()){
     			add = resultSet.getString(1);
     		}
+
+    private Connection connect = null;
+	private Statement statement = null;
+	private PreparedStatement preparedStatement = null;
+	private ResultSet resultSet = null;    private static int day=0;
+    private static Records RecObj=new Records();
+    private ArrayList<Resident> res=new ArrayList<Resident>();
+    private String password;
+    private Bill b=new Bill();
+    Complaint com=new Complaint("");
+
+    private Connection connect = null;
+	private Statement statement = null;
+	private PreparedStatement preparedStatement = null;
+	private ResultSet resultSet = null;
+    		ex.printStackTrack();
+    }
+}
     		return add;
     	} catch(SQLException ex) {
-    		ex.printStackTrack();
+    		ex.printStackTrack();    private static int day=0;
+    private static Records RecObj=new Records();
+    private ArrayList<Resident> res=new ArrayList<Resident>();
+    private String password;
+    private Bill b=new Bill();
+    Complaint com=new Complaint("");
+
+    private Connection connect = null;
+	private Statement statement = null;
+	private PreparedStatement preparedStatement = null;
+	private ResultSet resultSet = null;
     	}
     }
 
